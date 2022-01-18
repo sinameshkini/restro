@@ -1,0 +1,11 @@
+{
+    "servers": [
+        {
+            "name": "test_service",
+            "label": "Test Service",
+            "api_url": "http://127.0.0.1:4242/api/v1",
+            "access_token": "",
+            "debug": true
+        }
+    ]
+}
