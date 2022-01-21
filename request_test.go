@@ -45,7 +45,7 @@ func TestApi_Get(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			a, err := r.New("test_service")
+			a, err := New("test_service")
 			if (err != nil) != tt.wantErr {
 				t.Errorf("Api.Get() error = %v, wantErr %v", err, tt.wantErr)
 				return
@@ -97,7 +97,7 @@ func TestApi_Post(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			a, err := r.New("test_service")
+			a, err := New("test_service")
 			if (err != nil) != tt.wantErr {
 				t.Errorf("Api.Get() error = %v, wantErr %v", err, tt.wantErr)
 				return
@@ -148,7 +148,7 @@ func TestApi_Put(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			a, err := r.New("test_service")
+			a, err := New("test_service")
 			if (err != nil) != tt.wantErr {
 				t.Errorf("Api.Get() error = %v, wantErr %v", err, tt.wantErr)
 				return
@@ -194,7 +194,7 @@ func TestApi_Delete(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			a, err := r.New("test_service")
+			a, err := New("test_service")
 			if (err != nil) != tt.wantErr {
 				t.Errorf("Api.Get() error = %v, wantErr %v", err, tt.wantErr)
 				return

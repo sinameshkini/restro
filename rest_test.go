@@ -115,11 +115,9 @@ func Test_restro_New(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			r := &restro{
-				config:            tt.fields.config,
-				serversConfigPath: tt.fields.serversConfigPath,
-			}
-			gotApi, err := r.New(tt.args.serviceName)
+			Init(getPackageConfig())
+			SetConfigs("servers")
+			gotApi, err := New(tt.args.serviceName)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("restro.New() error = %v, wantErr %v", err, tt.wantErr)
 				return

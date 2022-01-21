@@ -31,7 +31,7 @@ func Init(config *viper.Viper) (err error) {
 	return nil
 }
 
-func (r *restro) SetConfigs(configPath string) {
+func SetConfigs(configPath string) {
 	r.serversConfigPath = configPath
 }
 
@@ -45,7 +45,7 @@ type Api struct {
 	*url.URL    `json:"-"`
 }
 
-func (r *restro) New(serviceName string) (api *Api, err error) {
+func New(serviceName string) (api *Api, err error) {
 	if r == nil {
 		return nil, errors.New("restro not initialized yet, hint: restro.Init()")
 	}

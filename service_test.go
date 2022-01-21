@@ -10,7 +10,7 @@ import (
 )
 
 func StartTestService() {
-	testService, _ := r.New("test_service")
+	testService, _ := New("test_service")
 	router := mux.NewRouter().PathPrefix("/api/v1").Subrouter()
 	router.HandleFunc("", getHandler).Methods(http.MethodGet)
 	router.HandleFunc("", postHandler).Methods(http.MethodPost)
@@ -20,7 +20,7 @@ func StartTestService() {
 		Handler: router,
 		Addr:    testService.URL.Host,
 	}
-	
+
 	log.Fatal(srv.ListenAndServe())
 }
 
